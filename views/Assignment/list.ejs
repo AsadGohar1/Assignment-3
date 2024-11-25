@@ -1,0 +1,45 @@
+<%- include ../Partials/header.ejs%>
+<%- include ../Partials/main_nav.ejs%>
+<!--Assignment Database-->
+<main class="container">
+    <div class="row">
+        <div class="offset-md-1 col-md-10">
+            <h1><%= title %></h1>
+            <br>
+            <a href="/assignmentlist/add" class="btn btn-primary" role="button">
+                <i class="fas fa-plus-circle"></i> Add Assignment</a>
+            <table class="table table-bordered table-striped table-hover">
+                <!--Table Header-->
+                <tr class="d-flex">
+                    <th class="text-center col-2">Course Title</th>
+                    <th class="text-center col-2">Assignment</th>
+                    <th class="text-center col-1">DuteDate</th>
+                    <th class="col-4">Assignment Description</th>
+                    <th class="text-center col-1">Statues</th>
+                </tr>
+                <% for(let count=0;count<AssignmentList.length;count++) { %>
+                <tr class="d-flex">
+                    <td class="text-center col-2"><%= AssignmentList[count].Course %></td>
+                    <td class="text-center col-2"><%= AssignmentList[count].Assignment %></td>
+                    <td class="text-center col-1"><%=AssignmentList[count].DuteDate%></td>
+                    <td class="col-4"><%= AssignmentList[count].AssignmentDescription %> </td>
+                    <td class="text-center col-1"><%= AssignmentList[count].Statues %></td>        
+                    <td class="text-center col-1">
+                        <a href="/assignmentlist/edit/<%= AssignmentList[count]._id%>"
+                            class="btn btn-primary btn-sm">
+                        <i class="fas fa-pencil-alt"></i>Edit
+                    </a>
+                    </td>
+                    <td class="text-center col-1">
+                        <a href="/assignmentlist/delete/<%= AssignmentList[count]._id%>"
+                            class="btn btn-danger btn-sm">
+                        <i class="fas fa-trash-alt"></i>Delete
+                    </a>
+                    </td>
+                </tr>    
+                    <%} %>
+            </table>
+        </div>
+    </div>
+</main>
+<%- include ../Partials/footer.ejs%>

@@ -1,0 +1,92 @@
+<%- include Partials/header.ejs%>
+<%- include Partials/main_nav.ejs%>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Assignment Tracker</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome for icons -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <!-- Custom CSS -->
+    <style>
+        body, html {
+            height: 100%;
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+        .splash-page {
+            background: linear-gradient(120deg, #6a11cb, #2575fc);
+            color: #fff;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            height: 100%;
+        }
+        .splash-title {
+            font-size: 4rem;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+        .splash-description {
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+            max-width: 600px;
+        }
+        .btn {
+            font-size: 1.2rem;
+            padding: 12px 30px;
+            border-radius: 30px;
+        }
+        .btn-start {
+            background-color: #28a745;
+            color: white;
+            margin-right: 10px;
+        }
+        .btn-start:hover {
+            background-color: #218838;
+        }
+        .btn-learn {
+            background-color: transparent;
+            color: white;
+            border: 2px solid white;
+        }
+        .btn-learn:hover {
+            background-color: rgba(255, 255, 255, 0.1);
+        }
+        footer {
+            position: absolute;
+            bottom: 10px;
+            width: 100%;
+            text-align: center;
+            font-size: 0.9rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="splash-page">
+        <h1 class="splash-title">Assignment Tracker</h1>
+        <p class="splash-description">
+            Manage your assignments efficiently and stay on top of your deadlines.  
+            Simplify your academic life with our easy-to-use tracker.
+        </p>
+        <div>
+            <a href="/dashboard" class="btn btn-start">
+                Get Started <i class="fa-solid fa-arrow-right"></i>
+            </a>
+            <a href="/about" class="btn btn-learn">
+                Learn More <i class="fa-solid fa-book"></i>
+            </a>
+        </div>
+    </div>
+    <footer>
+        &copy; 2024 Assignment Tracker. All rights reserved.
+    </footer>
+</body>
+</html>
+
+<%- include Partials/footer.ejs%>
